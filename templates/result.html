@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriScans - Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>NutriScans: Analysis Result</h1>
+    <p class="subtitle">Summary of measurement results based on photos and biometric data.</p>
+
+    <div class="result-grid">
+
+      <div class="result-card">
+        <h2>Input Summary</h2>
+        <div class="kv">
+          <div class="k">Age</div>
+          <div class="v">{{ age_years|round(1) }} </div>
+
+          <div class="k">Gender</div>
+          <div class="v">{{ gender }}</div>
+
+          <div class="k">Weight</div>
+          <div class="v">{{ weight_kg|round(1) }} kg</div>
+
+          <div class="k">Height</div>
+          <div class="v">{{ height_cm|round(1) }} cm</div>
+
+          <div class="k">MUAC Prediction</div>
+          <div class="v"><strong>{{ muac_pred|round(2) }} cm</strong></div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <h2>Mid Upper Arm Photo</h2>
+        <div class="photo-box">
+          <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded MUAC photo">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="result-card">
+      <h2>Status</h2>
+
+      <div class="status-badge {{ 'status-sam' if 'SAM' in status else ('status-mam' if 'MAM' in status else ('status-risk' if 'At-Risk' in status else 'status-healthy')) }}">
+        {{ status }}
+      </div>
+
+      <h3>Explanation</h3>
+      <div class="text-block">{{ explanation.replace('\n','<br>') | safe }}</div>
+
+      <h3>Suggestion</h3>
+      <div class="text-block">{{ advice }}</div>
+    </div>
+
+    <div class="actions">
+      <a class="btn-secondary" href="{{ url_for('home') }}">Kembali</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

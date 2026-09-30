@@ -1,0 +1,235 @@
+/* Basic Reset and Body Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f4f8; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for the form */
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px;
+}
+
+/* Header Styling */
+h1 {
+    color: #007bff; /* Biru untuk kesan profesional */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+    font-style: italic;
+}
+
+h2 {
+    color: #343a40;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ced4da;
+    padding-bottom: 5px;
+}
+
+/* Form Group Layout */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Input and Select Styling */
+input[type="number"], 
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus, 
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Instruction Text for Photo */
+.instruction-text {
+    display: block;
+    margin-top: 5px;
+    color: #28a745; /* Hijau untuk tips */
+    font-size: 0.85em;
+}
+
+/* Data Grid for 2-column layout */
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* --- PHOTO PREVIEW STYLES --- */
+.photo-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.image-preview-area {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #adb5bd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.8em;
+    color: #6c757d;
+    flex-shrink: 0;
+}
+
+#image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.photo-upload-group {
+    flex-grow: 1;
+}
+/* --- END PHOTO PREVIEW STYLES --- */
+
+
+/* Submit Button Styling */
+.submit-btn {
+    width: 100%;
+    background-color: #dc3545; /* Merah/kuning untuk peringatan risiko */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 35px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+
+
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+.result-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px 14px;
+  margin-top: 10px;
+}
+
+.k { color: #6c757d; font-weight: 600; }
+.v { color: #212529; }
+
+.photo-box {
+  border: 2px dashed #adb5bd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-badge {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.status-healthy { background: rgba(40,167,69,0.15); color: #1e7e34; }
+.status-risk    { background: rgba(255,193,7,0.18); color: #856404; }
+.status-mam     { background: rgba(255,140,0,0.18); color: #8a4b00; }
+.status-sam     { background: rgba(220,53,69,0.15); color: #a71d2a; }
+
+.text-block {
+  margin-top: 8px;
+  line-height: 1.6;
+  color: #343a40;
+}
+
+.actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-secondary {
+  text-decoration: none;
+  border: 1px solid #ced4da;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #343a40;
+  background: #fff;
+}
+
+.btn-secondary:hover {
+  background: #f8f9fa;
+}
